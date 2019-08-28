@@ -17,8 +17,7 @@ import { MyNotesProvider } from './services/my-notes/my-notes';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    MyNotesProvider
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }    
   ],
   bootstrap: [AppComponent]
 })

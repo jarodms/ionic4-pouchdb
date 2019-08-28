@@ -22,8 +22,7 @@ export class Tab1Page {
   getNotes() {
     this.myNotes.getMyNotes().then((data) => {
       console.log("Tab1Page Results: " + JSON.stringify(data));
-      this.allNotes = this.myNotes.myNotes;
-      
+      this.allNotes = data;      
     });
   }
 

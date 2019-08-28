@@ -15,7 +15,7 @@ import { MyNotesProvider } from '../services/my-notes/my-notes';
   ],
   declarations: [Tab1Page],
   providers: [
-    
+    MyNotesProvider
   ],
 })
 export class Tab1PageModule {}
