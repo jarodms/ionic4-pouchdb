@@ -33,12 +33,31 @@ export class MyNotesProvider {
   }
 
 
-
   getMyNotes() {
+    return new Promise(resolve => {
+      let _self = this;
+      this.database.allDocs({
+        include_docs: true,
+        attachments: true
+      }).then(function (result) {
+        // handle result
+        _self.myNotes = result.rows;
+        console.log("Results: " + JSON.stringify(_self.myNotes));
+        resolve(_self.myNotes);
+        /*this.database.changes({ live: true, since: 'now', include_docs: true }).on('change', (change) => {
+          this.handleChange(change);
+        });*/
 
-    if (this.myNotes) {
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+  getMyNotes1() {
+
+    /*if (this.myNotes) {
       return Promise.resolve(this.myNotes);
-    }
+    }*/
 
     return new Promise(resolve => {
 

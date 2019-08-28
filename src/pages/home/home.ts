@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+
 import { MyNotesProvider } from '../../providers/my-notes/my-notes';
 
 @Component({
@@ -10,12 +10,11 @@ export class HomePage {
 
   allNotes: any;
 
-  constructor(public navCtrl: NavController,
-              public myNotes: MyNotesProvider) {
+  constructor(public myNotes: MyNotesProvider) {
 
   }
 
-  ionViewDidLoad(){
+  ionViewWillLoad(){
  
     this.myNotes.getMyNotes().then((data) => {
       this.allNotes = data;

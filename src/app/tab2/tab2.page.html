@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab Two
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-end">
+        New Doc ID
+      </ion-col>
+      <ion-col>
+        <ion-input #testId id="testId" type="string" ></ion-input>
+      </ion-col>
+    </ion-row>
+    
+
+  </ion-grid>
+
+  <ion-row align-items-center>
+    <ion-col size="8" offset="2">
+      <ion-button expand="block" fill="outline" color="primary" (click)="writeUserData(testId)">
+        Add Entry</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-card class="quote-card" *ngFor="let entry of allDocs">
+      <ion-card-content>
+        <p class="quote">{{entry['doc'].time | date:'medium'}}</p>
+        <p class="weight">{{entry['doc'].weight}}</p>        
+      </ion-card-content>
+  
+    </ion-card>
+
+</ion-content>

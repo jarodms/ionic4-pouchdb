@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab One
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to Ionic! Type a note and hit enter</h2>
+  <!--<p>
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p>-->
+  <p>
+    <ion-item>
+      <ion-label stacked>Quick Note: </ion-label>
+      <ion-input type="text" #box (keyup.enter)="onEnter(box.value); box.value=''"
+              [value]="newValue"
+      ></ion-input>
+    </ion-item>
+  </p>
+
+  <ion-list>
+    <ion-item class="item-remove-animate item-icon-right" *ngFor="let item of allNotes" type="item-text-wrap" >
+      
+      <h2>{{item['doc'].note}}</h2>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
